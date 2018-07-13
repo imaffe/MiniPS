@@ -1,12 +1,11 @@
 #pragma once
+#include <string>
 class Model
 {
-private:
-    cv:
 public:
-    Model();
-    void set_update_display_data_notification(std::shared_ptr<Notification> notification);
-    void open_file(std::string path);
-    ~Model();
+    Model(){}
+    ~Model(){}
+    void open_file(const std::string& path);
+    
 };
 
