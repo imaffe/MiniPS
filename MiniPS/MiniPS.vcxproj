@@ -113,8 +113,12 @@
     </QtRcc>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="app.cpp" />
+    <ClCompile Include="Command.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MiniPS.cpp" />
+    <ClCompile Include="Model.cpp" />
+    <ClCompile Include="ViewModel.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="MiniPS.h" />
@@ -124,6 +128,14 @@
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="MiniPS.qrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="app.h" />
+    <ClInclude Include="Command.h" />
+    <ClInclude Include="Model.h" />
+    <ClInclude Include="Notification.h" />
+    <ClInclude Include="Parameters.h" />
+    <ClInclude Include="ViewModel.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
