@@ -1,5 +1,6 @@
-#include <iostream>
+#include <Qtwidgets/QApplication>
 using namespace std;
-int main() {
-    cout << "Hello, world" << endl;
+int main(int argc, char* argv[]) {
+    QApplication a(argc, argv);
+
 }
