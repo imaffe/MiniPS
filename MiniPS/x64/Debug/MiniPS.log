@@ -1,0 +1,9 @@
+﻿  Moc'ing MiniPS.h...
+  Rcc'ing MiniPS.qrc...
+  Uic'ing MiniPS.ui...
+  RCC: Warning: No resources in 'F:\MiniPS\MiniPS\MiniPS.qrc'.
+  main.cpp
+  MiniPS.cpp
+  moc_MiniPS.cpp
+  qrc_MiniPS.cpp
+  MiniPS.vcxproj -> F:\MiniPS\x64\Debug\MiniPS.exe
