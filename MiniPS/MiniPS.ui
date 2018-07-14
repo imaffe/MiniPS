@@ -14,7 +14,7 @@
    <string>MiniPS</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QPushButton" name="pushButton_start">
+   <widget class="QPushButton" name="pushButton_open">
     <property name="geometry">
      <rect>
       <x>90</x>
@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Start</string>
+     <string>Open</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_2">
@@ -65,5 +65,25 @@
  <resources>
   <include location="MiniPS.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pushButton_open</sender>
+   <signal>clicked()</signal>
+   <receiver>MiniPSClass</receiver>
+   <slot>OnButtonOpenClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>195</x>
+     <y>148</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>381</x>
+     <y>148</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>OnButtonOpenClicked()</slot>
+ </slots>
 </ui>

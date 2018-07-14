@@ -1,6 +1,6 @@
 class Parameters{
 public:
-    Parameters();
+    Parameters(){}
 };
 
 class PathParameters : public Parameters{
@@ -8,7 +8,7 @@ private:
     std::string path;
 public:
     PathParameters(std::string _path):path(_path){}
-    std::string get_path(){
+    std::string GetPath(){
         return path;
     }
 };

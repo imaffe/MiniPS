@@ -2,6 +2,8 @@
 
 #include <QtWidgets/QMainWindow>
 #include "ui_MiniPS.h"
+#include "Command.h"
+#include "Notification.h"
 
 class MiniPS : public QMainWindow
 {
@@ -9,13 +11,14 @@ class MiniPS : public QMainWindow
 
 public:
     MiniPS(QWidget *parent = Q_NULLPTR);
-    ~MiniPS();
-    void set_open_file_command(std::shared_ptr<Command>);
-    std::shared_ptr<Notification> get_update_view_notification();
+    ~MiniPS(){}
+    void SetOpenFileCommand(std::shared_ptr<Command>);
+    //std::shared_ptr<Notification> GetUpdateViewNotification();
 private slots:
-    void on_button_open_clicked();
+    void OnOpenButtonClicked();
 private:
     Ui::MiniPSClass ui;
-    std::shared_ptr<Command> open_file_command;
-    std::shared_ptr<Notification> update_view_notification;
+    std::shared_ptr<QImage> img;
+    std::shared_ptr<Command> openFileCommand;
+    //std::shared_ptr<Notification> updateViewNotificaition;
 };

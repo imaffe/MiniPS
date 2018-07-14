@@ -1,5 +1,5 @@
 #include "app.h"
 
-void App::run() {
-    view.show();
+void App::show() {
+    view->show();
 }

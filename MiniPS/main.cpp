@@ -1,10 +1,10 @@
-#include "MiniPS.h"
+#include "App.h"
 #include <QtWidgets/QApplication>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MiniPS w;
-    w.show();
+    App* app = new App;
+    app->run();
     return a.exec();
 }

@@ -1,12 +1,13 @@
 #include "ViewModel.h"
 
-
-
-ViewModel::ViewModel()
-{
+void ViewModel::bind(std::shared_ptr<Model> model) {
+    this->model = model;
 }
 
+std::shared_ptr<Command> ViewModel::GetOpenFileCommand() {
+    return openFileCommand;
+}
 
-ViewModel::~ViewModel()
-{
+void ViewModel::ExecOpenFileCommand(std::string& path) {
+    model->OpenFile(path);
 }
