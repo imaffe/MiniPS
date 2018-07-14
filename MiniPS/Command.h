@@ -1,4 +1,6 @@
 #include "Parameters.h"
+#include <string>
+
 class Command{
 protected:
     std::shared_ptr<Parameters> params;

@@ -1,11 +1,14 @@
 #pragma once
 #include <string>
+#include <opencv2/opencv.hpp>
 class Model
 {
+protected:
+    cv::Mat img;
 public:
     Model(){}
     ~Model(){}
-    void open_file(const std::string& path);
+    void OpenFile(const std::string& path);
     
 };
 
