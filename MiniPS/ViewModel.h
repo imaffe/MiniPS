@@ -6,18 +6,27 @@
 class ViewModel
 {
 private:
+    std::shared_ptr<QImage> qimg;
     std::shared_ptr<Model> model;
-    std::shared_ptr<Command> openFileCommand;
-    //std::shared_ptr<Notification> update_display_data_notification;
-    //std::shared_ptr<Notification> update_view_notification;
 public:
-    ViewModel(){}
+    std::shared_ptr<Command> openFileCommand;
+    std::shared_ptr<Notification> updatePictureNotification;
+    std::shared_ptr<Notification> completeCommandNotification;
+    std::shared_ptr<Notification> updateViewNotification;
+public:
+    ViewModel(){
+        std::shared_ptr<openFileCommand> openFileCommandPtr = new OpenFileCommand(std::shared_ptr<ViewModel>(this));
+        openFileCommand = std::static_pointer_cast<Command, OpenFileCommand>(openFileCommandPtr);
+        std::shared_ptr<UpdatePictureNotifier> updatePictureNotifierPtr = new UpdatePictureNotifier(std::shared_ptr<ViewModel>(this));
+        updatePictureNotification = std::static_pointer_cast<Notification, UpdatePictureNotifier>(updatePictureNotifierPtr);
+    }
     void bind(std::shared_ptr<Model> model);
     std::shared_ptr<Command> GetOpenFileCommand();
+    void setUpdatePictureNotification(std::shared_ptr<Notification>);
+    void setCompleteCommandNotification(std::shared_ptr<Notification>);
+    void setUpdateViewNotification(std::shared_ptr<Notification>);
     void ExecOpenFileCommand(std::string&);
-    //void exec_open_file_command(std::string path);
-    //void set_update_view_notification(std::shared_ptr<Notification> notification);
-    //std::shared_ptr<Notification> get_update_display_data_notification();
-    //void notified();
+    void UpdatePicture();
+    void ExecCommandNotification(bool);
 };
 

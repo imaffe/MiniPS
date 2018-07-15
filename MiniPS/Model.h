@@ -5,10 +5,13 @@ class Model
 {
 protected:
     cv::Mat img;
+
 public:
     Model(){}
     ~Model(){}
-    void OpenFile(const std::string& path);
-    
+    bool OpenFile(const std::string& path);
+    std::shared_ptr<cv::Mat> GetImage();
+    std::shared_ptr<Notification> updatePictureNotification;
+    std::shared_ptr<Notification> completeCommandNotification;
 };
 

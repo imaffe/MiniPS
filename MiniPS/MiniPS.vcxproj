@@ -118,6 +118,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MiniPS.cpp" />
     <ClCompile Include="Model.cpp" />
+    <ClCompile Include="Notification.cpp" />
     <ClCompile Include="ViewModel.cpp" />
   </ItemGroup>
   <ItemGroup>

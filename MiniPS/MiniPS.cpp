@@ -7,12 +7,16 @@ MiniPS::MiniPS(QWidget *parent)
     : QMainWindow(parent)
 {
     ui.setupUi(this);
-    //updateViewNotificaition = std::static_pointer_cast<Notification, UpdateViewNotification> \
+    updatePictureNotificaition = std::static_pointer_cast<Notification, UpdateViewNotification> \
         (std::shared_ptr<UpdateViewNotification>(new UpdateViewNotification(std::shared_ptr<MiniPS>(this))));
 }
 
 void MiniPS::SetOpenFileCommand(std::shared_ptr<Command> cmd) {
     openFileCommand = cmd;
+}
+
+std::shared_ptr<Notification> MiniPS::GetUpdatePictureNotification(){
+    return updatePictureNotification;
 }
 
 void MiniPS::OnOpenButtonClicked() {
@@ -31,6 +35,6 @@ void MiniPS::OnOpenButtonClicked() {
     }
 }
 
-/* std::shared_ptr<Notification> MiniPS::GetUpdateViewNotification() {
-    return updateViewNotificaition;
-} */
+void MiniPS::ShowPicture(const std::shared_ptr<QImage> qimg){
+    
+}

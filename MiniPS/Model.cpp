@@ -1,13 +1,18 @@
 #include "Model.h"
 #include <iostream>
 
-void Model::OpenFile(const std::string& path) {
+
+bool Model::OpenFile(const std::string& path) {
     img = cv::imread(path);
-    /* if (img.empty()) {
-        this->notify(false);
+    if (img.empty()) {
+        return FALSE;
     }
     else {
-        std::string s = "image";
-        this->notify(s);
-    } */
+        updatePictureNotification.Notify();
+        return TRUE;
+    } 
+}
+
+std::shared_ptr<cv::Mat> Model::GetImage(){
+    return img;
 }

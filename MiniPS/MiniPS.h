@@ -13,12 +13,12 @@ public:
     MiniPS(QWidget *parent = Q_NULLPTR);
     ~MiniPS(){}
     void SetOpenFileCommand(std::shared_ptr<Command>);
-    //std::shared_ptr<Notification> GetUpdateViewNotification();
+    void UpdatePicture(std::shared_ptr<Notification>);
+    std::shared_ptr<Notification> GetUpdatePictureNotification();
 private slots:
     void OnOpenButtonClicked();
 private:
     Ui::MiniPSClass ui;
-    std::shared_ptr<QImage> img;
     std::shared_ptr<Command> openFileCommand;
-    //std::shared_ptr<Notification> updateViewNotificaition;
+    std::shared_ptr<Notification> updatePictureNotification;
 };
