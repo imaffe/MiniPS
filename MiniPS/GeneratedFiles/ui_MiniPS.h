@@ -17,6 +17,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QScrollArea>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
@@ -27,8 +28,10 @@ class Ui_MiniPSClass
 {
 public:
     QWidget *centralWidget;
-    QPushButton *pushButton_start;
+    QPushButton *pushButton_open;
     QPushButton *pushButton_2;
+    QScrollArea *pic;
+    QWidget *scrollAreaWidgetContents;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -40,12 +43,20 @@ public:
         MiniPSClass->resize(600, 400);
         centralWidget = new QWidget(MiniPSClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        pushButton_start = new QPushButton(centralWidget);
-        pushButton_start->setObjectName(QStringLiteral("pushButton_start"));
-        pushButton_start->setGeometry(QRect(90, 60, 141, 81));
+        pushButton_open = new QPushButton(centralWidget);
+        pushButton_open->setObjectName(QStringLiteral("pushButton_open"));
+        pushButton_open->setGeometry(QRect(90, 60, 141, 81));
         pushButton_2 = new QPushButton(centralWidget);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
         pushButton_2->setGeometry(QRect(90, 180, 141, 71));
+        pic = new QScrollArea(centralWidget);
+        pic->setObjectName(QStringLiteral("pic"));
+        pic->setGeometry(QRect(330, 90, 261, 171));
+        pic->setWidgetResizable(true);
+        scrollAreaWidgetContents = new QWidget();
+        scrollAreaWidgetContents->setObjectName(QStringLiteral("scrollAreaWidgetContents"));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 259, 169));
+        pic->setWidget(scrollAreaWidgetContents);
         MiniPSClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MiniPSClass);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -59,6 +70,7 @@ public:
         MiniPSClass->setStatusBar(statusBar);
 
         retranslateUi(MiniPSClass);
+        QObject::connect(pushButton_open, SIGNAL(clicked()), MiniPSClass, SLOT(OnButtonOpenClicked()));
 
         QMetaObject::connectSlotsByName(MiniPSClass);
     } // setupUi
@@ -66,7 +78,7 @@ public:
     void retranslateUi(QMainWindow *MiniPSClass)
     {
         MiniPSClass->setWindowTitle(QApplication::translate("MiniPSClass", "MiniPS", nullptr));
-        pushButton_start->setText(QApplication::translate("MiniPSClass", "Start", nullptr));
+        pushButton_open->setText(QApplication::translate("MiniPSClass", "Open", nullptr));
         pushButton_2->setText(QApplication::translate("MiniPSClass", "End", nullptr));
     } // retranslateUi
 

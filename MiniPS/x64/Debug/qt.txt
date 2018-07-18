@@ -1,3 +1,0 @@
-Moc'ing MiniPS.h...;F:\Qt\5.10.1\msvc2017_64\bin\moc.exe;"F:\MiniPS\MiniPS\MiniPS.h" -o ".\GeneratedFiles\Debug\moc_MiniPS.cpp" "-I.\GeneratedFiles" "-I." "-IF:\Qt\5.10.1\msvc2017_64\include" "-I.\GeneratedFiles\Debug" "-IF:\Qt\5.10.1\msvc2017_64\include\QtCore" "-IF:\Qt\5.10.1\msvc2017_64\include\QtGui" "-IF:\Qt\5.10.1\msvc2017_64\include\QtANGLE" "-IF:\Qt\5.10.1\msvc2017_64\include\QtWidgets" -DUNICODE -D_UNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
-Rcc'ing MiniPS.qrc...;F:\Qt\5.10.1\msvc2017_64\bin\rcc.exe;"F:\MiniPS\MiniPS\MiniPS.qrc" -o ".\GeneratedFiles\qrc_MiniPS.cpp" --name MiniPS
-Uic'ing MiniPS.ui...;F:\Qt\5.10.1\msvc2017_64\bin\uic.exe;"F:\MiniPS\MiniPS\MiniPS.ui" -o ".\GeneratedFiles\ui_MiniPS.h"

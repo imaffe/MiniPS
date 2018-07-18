@@ -1,10 +1,10 @@
-#include "App.h"
+#include "App/app.h"
 #include <QtWidgets/QApplication>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     App* app = new App;
-    app->run();
+    app->show();
     return a.exec();
 }
