@@ -70,7 +70,7 @@ public:
         MiniPSClass->setStatusBar(statusBar);
 
         retranslateUi(MiniPSClass);
-        QObject::connect(pushButton_open, SIGNAL(clicked()), MiniPSClass, SLOT(OnButtonOpenClicked()));
+        QObject::connect(pushButton_open, SIGNAL(clicked()), MiniPSClass, SLOT(OnOpenButtonClicked()));
 
         QMetaObject::connectSlotsByName(MiniPSClass);
     } // setupUi

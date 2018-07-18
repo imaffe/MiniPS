@@ -9,7 +9,8 @@ private:
     std::shared_ptr<cv::Mat> img;
     std::shared_ptr<IPropertyNotification> convertImageFormatNotifier;
 public:
-    Model(){}
+
+    Model() : img(std::shared_ptr<cv::Mat>(new(cv::Mat))) {}
     ~Model(){}
     bool OpenFile(const std::string& path);
     std::shared_ptr<cv::Mat> GetCvImage();

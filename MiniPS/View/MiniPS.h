@@ -11,7 +11,6 @@ class MiniPS : public QMainWindow
 
 public:
     MiniPS(QWidget *parent = Q_NULLPTR);
-    ~MiniPS(){}
     void SetOpenFileCommand(std::shared_ptr<ICommandBase>);
     std::shared_ptr<IPropertyNotification> GetUpdateViewSink();
     void SetQImage(std::shared_ptr<QImage>);
@@ -20,7 +19,7 @@ public:
 private slots:
     void OnOpenButtonClicked();
 private:
-    Ui::MiniPSClass *ui;
+    Ui::MiniPSClass ui;
     std::shared_ptr<QImage> qimg;
 public:
     std::shared_ptr<ICommandBase> openFileCommand;

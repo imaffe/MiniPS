@@ -4,7 +4,7 @@
 #include "Notification/Notification.h"
 #include <QtGui/QImage>
 
-ViewModel::ViewModel() {
+ViewModel::ViewModel() : qimg(std::shared_ptr<QImage>(new(QImage))) {
     openFileCommand = std::static_pointer_cast<OpenFileCommand> \
         (std::shared_ptr<OpenFileCommand>(new OpenFileCommand(std::shared_ptr<ViewModel>(this))));
     convertImageFormatSink = std::static_pointer_cast<ConvertImageFormatNotification>
@@ -30,7 +30,7 @@ void ViewModel::ExecOpenFileCommand(std::string& path) {
     model->OpenFile(path);
 }
 void ViewModel::ConvertImageFormat(){
-    *qimg = MatToQImage(*cvimg);
+    (*qimg) = MatToQImage(*cvimg);
     updateViewNotifier->OnPropertyChanged();
 }
 
@@ -40,7 +40,7 @@ QImage ViewModel::MatToQImage(cv::Mat cvimg){
     cv::cvtColor(cvimg, tempimg, cv::COLOR_BGR2RGB);
     QImage::Format format = QImage::Format_RGB888;
     return QImage(tempimg.data, tempimg.cols, tempimg.rows,
-                static_cast<int>(tempimg.step), format);
+                static_cast<int>(tempimg.step), format).copy();
 }
 
 std::shared_ptr<QImage> ViewModel::GetQImage(){

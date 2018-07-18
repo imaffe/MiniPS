@@ -7,8 +7,9 @@
 #include <QMessageBox>
 #include <QLabel>
 
-MiniPS::MiniPS(QWidget *parent){
-    ui->setupUi(this);
+MiniPS::MiniPS(QWidget *parent)
+    : QMainWindow(parent) {
+    ui.setupUi(this);
     updateViewSink = std::static_pointer_cast<UpdateViewNotification> \
         (std::shared_ptr<UpdateViewNotification>(new UpdateViewNotification(std::shared_ptr<MiniPS>(this)))); 
 }
@@ -45,5 +46,5 @@ void MiniPS::ShowPicture(){
     QLabel *label = new QLabel();
     label->setPixmap(QPixmap::fromImage(*qimg));
     label->resize(QSize(qimg->width(), qimg->height()));
-    ui->pic->setWidget(label);
+    ui.pic->setWidget(label);
 }
