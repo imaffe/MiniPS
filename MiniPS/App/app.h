@@ -10,10 +10,19 @@ public:
     App(): view(new MiniPS), model(new Model), viewmodel(new ViewModel){
         viewmodel->bind(model);
         view->SetOpenFileCommand(viewmodel->GetOpenFileCommand());
+        view->SetContrastCommand(viewmodel->GetContrastCommand());
+        view->SetGaussianFilterCommand(viewmodel->GetGaussianFilterCommand());
+        view->SetFilter1Command(viewmodel->GetFilter1Command());
+        view->SetFilter2Command(viewmodel->GetFilter2Command());
+        view->SetSaveFileCommand(viewmodel->GetSaveFileCommand());
         viewmodel->SetUpdateViewNotifier(view->GetUpdateViewSink());
         model->SetConvertImageFormatNotifier(viewmodel->GetConvertImageFormatSink());
-        view->SetQImage(viewmodel->GetQImage());
-        viewmodel->SetCvImage(model->GetCvImage());
+        view->SetQImage(viewmodel->GetQImage_origin());
+        view->SetObjQImage(viewmodel->GetQImage_changed());
+        view->SetBackQImage(viewmodel->GetQImage_back());
+        viewmodel->SetCvImage_origin(model->GetCvImage());
+        viewmodel->SetCvImage_changed(model->GetCvImage_changed());
+        viewmodel->SetCvImage_back(model->GetCvImage_back());
     }
     
 
