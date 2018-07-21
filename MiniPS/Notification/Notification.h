@@ -26,6 +26,8 @@ public:
     UpdateViewNotification(std::shared_ptr<MiniPS> _view) : view(_view){}
     void OnPropertyChanged() {
         view->ShowPicture();
+        view->SetBackGround();
+        view->ShowObjPicture();
     }
 protected:
     std::shared_ptr<MiniPS> view;
