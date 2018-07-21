@@ -66,6 +66,7 @@ public:
     std::shared_ptr<ICommandBase> filter1Command;
     std::shared_ptr<ICommandBase> filter2Command;
     std::shared_ptr<ICommandBase> saveFileCommand;
+    std::shared_ptr<ICommandBase> faceDetectCommand;
     std::shared_ptr<IPropertyNotification> updateViewSink;
 
     //²Ù×÷º¯Êý
@@ -79,6 +80,7 @@ public:
     void SetGaussianFilterCommand(std::shared_ptr<ICommandBase>);
     void SetFilter1Command(std::shared_ptr<ICommandBase>);
     void SetFilter2Command(std::shared_ptr<ICommandBase>);
+    void SetFaceDetectCommand(std::shared_ptr<ICommandBase>);
     std::shared_ptr<IPropertyNotification> GetUpdateViewSink();
     void SetQImage(std::shared_ptr<QImage>);
     void SetBackQImage(std::shared_ptr<QImage>);

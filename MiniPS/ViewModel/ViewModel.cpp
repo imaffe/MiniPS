@@ -7,6 +7,8 @@
 #include "Command/Filter1Command.h"
 #include "Command/Filter2Command.h"
 #include "Command/SaveFileCommand.h"
+#include "Command/FaceDetectCommand.h"
+
 #include <QtGui/QImage>
 
 ViewModel::ViewModel() : qimg_origin(std::shared_ptr<QImage>(new(QImage)))
@@ -16,7 +18,7 @@ ViewModel::ViewModel() : qimg_origin(std::shared_ptr<QImage>(new(QImage)))
 					, cvimg_changed(std::shared_ptr<cv::Mat>(new (cv::Mat)))
 					, cvimg_back(std::shared_ptr<cv::Mat>(new (cv::Mat)))
 {
-    openFileCommand = std::static_pointer_cast<OpenFileCommand> \
+     openFileCommand = std::static_pointer_cast<OpenFileCommand> \
         (std::shared_ptr<OpenFileCommand>(new OpenFileCommand(std::shared_ptr<ViewModel>(this))));
     contrastCommand = std::static_pointer_cast<ContrastCommand>\
         (std::shared_ptr<ContrastCommand>(new ContrastCommand(std::shared_ptr<ViewModel>(this))));
@@ -28,9 +30,11 @@ ViewModel::ViewModel() : qimg_origin(std::shared_ptr<QImage>(new(QImage)))
         (std::shared_ptr<Filter2Command>(new Filter2Command(std::shared_ptr<ViewModel>(this))));
     saveFileCommand= std::static_pointer_cast<SaveFileCommand> \
         (std::shared_ptr<SaveFileCommand>(new SaveFileCommand(std::shared_ptr<ViewModel>(this))));
+    faceDetectCommand = std::static_pointer_cast<FaceDetectCommand> \
+        (std::shared_ptr<FaceDetectCommand>(new FaceDetectCommand(std::shared_ptr<ViewModel>(this))));
 
     convertImageFormatSink = std::static_pointer_cast<ConvertImageFormatNotification>(std::shared_ptr<ConvertImageFormatNotification>(new ConvertImageFormatNotification(std::shared_ptr<ViewModel>(this))));
-
+    
 
 }
 
@@ -113,6 +117,10 @@ void ViewModel::ExecFilter2Command()
 	model->Filter_2_Black();
 }
 
+void ViewModel::ExecFaceDetectCommand() {
+    model->FaceDetect();
+}
+
 std::shared_ptr<ICommandBase> ViewModel::GetOpenFileCommand() {
 	return openFileCommand;
 }
@@ -135,6 +143,10 @@ std::shared_ptr<ICommandBase> ViewModel::GetFilter1Command()
 std::shared_ptr<ICommandBase> ViewModel::GetFilter2Command()
 {
 	return filter2Command;
+}
+
+std::shared_ptr<ICommandBase> ViewModel::GetFaceDetectCommand() {
+    return faceDetectCommand;
 }
 
 

@@ -113,9 +113,6 @@
     </QtRcc>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <QtUic Include="MiniPS.ui" />
-  </ItemGroup>
-  <ItemGroup>
     <QtRcc Include="MiniPS.qrc" />
   </ItemGroup>
   <ItemGroup>
@@ -124,6 +121,8 @@
     <ClCompile Include="Model\Model.cpp" />
     <ClCompile Include="ViewModel\ViewModel.cpp" />
     <ClCompile Include="View\MiniPS.cpp" />
+    <ClCompile Include="View\optionwindow.cpp" />
+    <ClCompile Include="View\qclicklabel.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App\app.h" />
@@ -131,6 +130,14 @@
     <ClInclude Include="Model\Model.h" />
     <ClInclude Include="Notification\Notification.h" />
     <ClInclude Include="ViewModel\ViewModel.h" />
+    <QtMoc Include="View\qclicklabel.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">F:\opencv\build\include\opencv2;F:\opencv\build\include;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName)\.;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName)\.;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets</IncludePath>
+    </QtMoc>
+    <QtMoc Include="View\optionwindow.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">F:\opencv\build\include\opencv2;F:\opencv\build\include;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName)\.;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName)\.;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets</IncludePath>
+    </QtMoc>
     <QtMoc Include="View\MiniPS.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

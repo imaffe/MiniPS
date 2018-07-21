@@ -31,6 +31,8 @@ public:
 	std::shared_ptr<ICommandBase> saveFileCommand;
 	std::shared_ptr<ICommandBase> filter1Command;
 	std::shared_ptr<ICommandBase> filter2Command;
+    std::shared_ptr<ICommandBase> faceDetectCommand;
+
 public:
     ViewModel();
     void bind(std::shared_ptr<Model> model);
@@ -54,6 +56,7 @@ public:
 	void ExecSaveFileCommand(std::string&);
 	void ExecFilter1Command();
 	void ExecFilter2Command();
+    void ExecFaceDetectCommand();
 
 	std::shared_ptr<ICommandBase> GetOpenFileCommand();
 	std::shared_ptr<ICommandBase> GetContrastCommand();
@@ -62,5 +65,5 @@ public:
 	std::shared_ptr<ICommandBase> GetSaveFileCommand();
 	std::shared_ptr<ICommandBase> GetFilter1Command();
 	std::shared_ptr<ICommandBase> GetFilter2Command();
-
+    std::shared_ptr<ICommandBase> GetFaceDetectCommand();
 };

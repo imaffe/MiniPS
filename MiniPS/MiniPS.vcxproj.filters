@@ -30,11 +30,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="MiniPS.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-  </ItemGroup>
-  <ItemGroup>
     <QtRcc Include="MiniPS.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
@@ -53,6 +48,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="App\app.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="View\qclicklabel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="View\optionwindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -75,6 +76,12 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="View\MiniPS.h">
+      <Filter>Source Files</Filter>
+    </QtMoc>
+    <QtMoc Include="View\qclicklabel.h">
+      <Filter>Source Files</Filter>
+    </QtMoc>
+    <QtMoc Include="View\optionwindow.h">
       <Filter>Source Files</Filter>
     </QtMoc>
   </ItemGroup>

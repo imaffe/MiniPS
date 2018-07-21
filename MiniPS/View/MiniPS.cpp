@@ -147,6 +147,11 @@ void MiniPS::SetFilter2Command(std::shared_ptr<ICommandBase> cmd) {
 void MiniPS::SetSaveFileCommand(std::shared_ptr<ICommandBase> cmd) {
     saveFileCommand = cmd;
 }
+
+void MiniPS::SetFaceDetectCommand(std::shared_ptr<ICommandBase> cmd) {
+    faceDetectCommand = cmd;
+}
+
 std::shared_ptr<IPropertyNotification> MiniPS::GetUpdateViewSink() {
     return updateViewSink;
 }

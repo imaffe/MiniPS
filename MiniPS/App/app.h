@@ -15,6 +15,7 @@ public:
         view->SetFilter1Command(viewmodel->GetFilter1Command());
         view->SetFilter2Command(viewmodel->GetFilter2Command());
         view->SetSaveFileCommand(viewmodel->GetSaveFileCommand());
+        view->SetFaceDetectCommand(viewmodel->GetFaceDetectCommand());
         viewmodel->SetUpdateViewNotifier(view->GetUpdateViewSink());
         model->SetConvertImageFormatNotifier(viewmodel->GetConvertImageFormatSink());
         view->SetQImage(viewmodel->GetQImage_origin());
@@ -23,6 +24,7 @@ public:
         viewmodel->SetCvImage_origin(model->GetCvImage());
         viewmodel->SetCvImage_changed(model->GetCvImage_changed());
         viewmodel->SetCvImage_back(model->GetCvImage_back());
+
     }
     
 

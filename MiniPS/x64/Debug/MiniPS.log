@@ -1,2 +1,7 @@
-﻿  Model.cpp
+﻿  Moc'ing View\qclicklabel.h...
+  Moc'ing View\optionwindow.h...
+  optionwindow.cpp
+  qclicklabel.cpp
+  moc_qclicklabel.cpp
+  moc_optionwindow.cpp
   MiniPS.vcxproj -> F:\MiniPS\x64\Debug\MiniPS.exe

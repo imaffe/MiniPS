@@ -59,6 +59,27 @@ void Model::Contrast(double contrast_value, double bright_value)
 	convertImageFormatNotifier->OnPropertyChanged();
 }
 
+
+void Model::FaceDetect() {
+    using namespace cv;
+    Mat img_gray, img_equalized, face;
+    cvtColor(*img_origin, img_gray, cv::COLOR_BGR2GRAY);
+    equalizeHist(img_gray, img_equalized);
+    CascadeClassifier faces_cascade;
+    faces_cascade.load("haarcascades//haarcascade_frontalface_alt.xml");
+    std::vector<Rect> faces;
+    faces_cascade.detectMultiScale(img_gray, faces, 1.1, 2, 0 | CV_HAAR_SCALE_IMAGE, Size(30, 30));
+    Point text;
+    for (int i = 0; i < faces.size(); i++) {
+        if (faces[i].height > 0 && faces[i].width > 0) {
+            face = img_gray(faces[i]);
+            text = Point(faces[i].x, faces[i].y);
+            rectangle(*img_changed, faces[i], cv::Scalar(255, 0, 0), 1, 8, 0);
+        }
+    }
+    convertImageFormatNotifier->OnPropertyChanged();
+}
+
 void Model::GaussianFilter(cv::Size ksize, double sigmaX, double sigmaY, int borderType)
 {
 	cv::GaussianBlur(*img_origin, *img_changed, ksize, sigmaX, sigmaY, borderType);

@@ -29,6 +29,6 @@ public:
 	void BlurFilter(int depth, cv::Size ksize, cv::Point anchor, bool norm = true);
 	void Filter_1_Past();
 	void Filter_2_Black();
-
+    void FaceDetect();
 };
 
