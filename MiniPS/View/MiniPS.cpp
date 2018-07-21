@@ -1,7 +1,7 @@
 #include "View/MiniPS.h"
 #include "ui_MiniPS.h"
-#include "Command/OpenFileCommand.h"
-#include "Notification//Notification.h"
+#include "ViewModel/OpenFileCommand.h"
+#include "Notification/Notification.h"
 #include <string>
 #include <QFileDialog>  
 #include <QMessageBox>

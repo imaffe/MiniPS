@@ -1,6 +1,6 @@
 #include "ViewModel/ViewModel.h"
 #include "Model/Model.h"
-#include "Command//OpenFileCommand.h"
+#include "ViewModel/OpenFileCommand.h"
 #include "Notification/Notification.h"
 #include <QtGui/QImage>
 
@@ -29,6 +29,7 @@ std::shared_ptr<IPropertyNotification> ViewModel::GetConvertImageFormatSink() {
 void ViewModel::ExecOpenFileCommand(std::string& path) {
     model->OpenFile(path);
 }
+
 void ViewModel::ConvertImageFormat(){
     (*qimg) = MatToQImage(*cvimg);
     updateViewNotifier->OnPropertyChanged();

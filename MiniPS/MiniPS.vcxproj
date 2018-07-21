@@ -127,7 +127,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App\app.h" />
-    <ClInclude Include="Command\OpenFileCommand.h" />
     <ClInclude Include="Comman\Comman.h" />
     <ClInclude Include="Model\Model.h" />
     <ClInclude Include="Notification\Notification.h" />

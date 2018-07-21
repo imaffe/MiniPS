@@ -1,10 +1,13 @@
 #include "Model/Model.h"
 #include "Notification/Notification.h"
 #include <iostream>
-
+#include <vector>
 
 bool Model::OpenFile(const std::string& path) {
-    *img = cv::imread(path);
+    using namespace cv;
+    *img = imread(path);
+
+
     if (img->empty()) {
         return 0;
     }
@@ -13,6 +16,7 @@ bool Model::OpenFile(const std::string& path) {
         return 1;
     } 
 }
+
 
 std::shared_ptr<cv::Mat> Model::GetCvImage(){
     return img;

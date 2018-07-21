@@ -21,6 +21,15 @@ class ICommandParameter
 
 };
 
+class PathParameter : public ICommandParameter {
+private:
+    std::string path;
+public:
+    PathParameter(std::string _path) : path(_path) {}
+    std::string GetPath() {
+        return path;
+    }
+};
 
 class ICommandBase
 {
@@ -43,6 +52,5 @@ class ICommandNotification
 public:
     virtual void OnCommandComplete(bool bOK) = 0;
 };
-
 
 

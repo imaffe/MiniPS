@@ -69,9 +69,6 @@
     <ClInclude Include="Comman\Comman.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="Command\OpenFileCommand.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="Notification\Notification.h">
       <Filter>Source Files</Filter>
     </ClInclude>

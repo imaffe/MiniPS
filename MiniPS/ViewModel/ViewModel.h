@@ -14,7 +14,7 @@ private:
     std::shared_ptr<QImage> qimg;
     std::shared_ptr<cv::Mat> cvimg;
     std::shared_ptr<Model> model;
-public:
+private:
     std::shared_ptr<ICommandBase> openFileCommand;
     std::shared_ptr<IPropertyNotification> convertImageFormatSink;
     std::shared_ptr<IPropertyNotification> updateViewNotifier;

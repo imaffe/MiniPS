@@ -40,27 +40,27 @@ public:
     {
         if (MiniPSClass->objectName().isEmpty())
             MiniPSClass->setObjectName(QStringLiteral("MiniPSClass"));
-        MiniPSClass->resize(600, 400);
+        MiniPSClass->resize(1067, 685);
         centralWidget = new QWidget(MiniPSClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         pushButton_open = new QPushButton(centralWidget);
         pushButton_open->setObjectName(QStringLiteral("pushButton_open"));
-        pushButton_open->setGeometry(QRect(90, 60, 141, 81));
+        pushButton_open->setGeometry(QRect(90, 120, 141, 81));
         pushButton_2 = new QPushButton(centralWidget);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(90, 180, 141, 71));
+        pushButton_2->setGeometry(QRect(70, 440, 141, 71));
         pic = new QScrollArea(centralWidget);
         pic->setObjectName(QStringLiteral("pic"));
-        pic->setGeometry(QRect(330, 90, 261, 171));
+        pic->setGeometry(QRect(330, 90, 651, 431));
         pic->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QStringLiteral("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 259, 169));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 649, 429));
         pic->setWidget(scrollAreaWidgetContents);
         MiniPSClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MiniPSClass);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 600, 26));
+        menuBar->setGeometry(QRect(0, 0, 1067, 26));
         MiniPSClass->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MiniPSClass);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
