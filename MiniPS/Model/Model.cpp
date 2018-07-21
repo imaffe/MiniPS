@@ -59,7 +59,7 @@ void Model::Contrast(double contrast_value, double bright_value)
 	convertImageFormatNotifier->OnPropertyChanged();
 }
 
-
+    
 void Model::FaceDetect() {
     using namespace cv;
     Mat img_gray, img_equalized, face;
