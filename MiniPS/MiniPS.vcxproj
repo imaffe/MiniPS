@@ -30,8 +30,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
-    <IncludePath>c:/projects/myMiniPS/MiniPS/include;$(IncludePath)</IncludePath>
-    <LibraryPath>c:/projects/myMiniPS/MiniPS/lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>c:/projects/myMiniPS/include;$(IncludePath)</IncludePath>
+    <LibraryPath>c:/projects/myMiniPS/lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
