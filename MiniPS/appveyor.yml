@@ -1,0 +1,13 @@
+version: 1.0.{build}
+image: Visual Studio 2017
+build:
+  verbosity: minimal
+artifacts:
+- path: 64\Release\*.exe
+  name: Litianhao
+install:
+  - set QTDIR=C:\Qt\5.10.1\msvc2017_64
+  - set PATH=%PATH%;%QTDIR%\bin;C:\WinGW\bin
+build_script:
+  - qmake QtTest.pro
+  - mingw64-make
